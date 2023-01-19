@@ -1,6 +1,7 @@
 import { Column, ForeignKey, HasMany, Model, Table } from "sequelize-typescript"
 import { UserEntity } from "src/user/user.entity"
 import { UserLikedEntity } from "src/users-liked/user-liked.entity"
+import { RetweetEntity } from "./retweet.entity"
 
 @Table({ tableName: 'tweet', modelName: 'tweet', freezeTableName: true })
 export class TweetEntity extends Model {
@@ -13,7 +14,7 @@ export class TweetEntity extends Model {
 
   @Column({ allowNull: false })
   text: string
-  
+
   @ForeignKey(() => UserEntity)
   @Column({ allowNull: false })
   userfk: number
@@ -23,4 +24,7 @@ export class TweetEntity extends Model {
 
   @HasMany(() => UserLikedEntity)
   userLiked: UserLikedEntity
+
+  @HasMany(() => RetweetEntity)
+  retweet: RetweetEntity
 }

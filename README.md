@@ -2,9 +2,6 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
   <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
     <p align="center">
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
@@ -26,48 +23,52 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## O projeto é uma simulação de interações presentes no Twitter
+
+Como:
+
+- Authentication/Authorization
+- Like/Dislike
+- Adicionar e deletar tweets
+- Retweetar
+
+----
+
+## Banco de Dados
+
+### Na primeira vez que o código iniciado, irá sincronizar as tabelas e suas propriedades com o banco já criado e inserido na .env. Após isso, caso queira, comente as linhas de sincronização presente no arquivo app.module.29-30
+
+----
+
 ## Installation
 
 ```bash
-$ yarn install
+yarn install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ yarn run start
+$ yarn start
 
 # watch mode
-$ yarn run start:dev
+$ yarn dev
 
 # production mode
-$ yarn run start:prod
+$ yarn prod
 ```
 
-## Test
+----
 
-```bash
-# unit tests
-$ yarn run test
+## SWAGGER
 
-# e2e tests
-$ yarn run test:e2e
+O projeto possui uma documentação das rotas utilizadas. Para acessar, adicione "/docs" na url que seu projeto está rodando.
 
-# test coverage
-$ yarn run test:cov
-```
+- Ex: *<http://localhost:3050/docs>*
 
-## Support
+----
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Collection - Postman
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+A collection com as requisições utilizadas na implementação constam na raiz do projeto como "postman_collection.json", basta importa-la para o Postman.

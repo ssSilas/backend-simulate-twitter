@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TweetService } from './tweet.service';
 import { TweetController } from './tweet.controller';
-import { TweetEntity } from './tweet.entity';
+import { TweetEntity } from './entities/tweet.entity';
 import { Utils } from 'helpers/utils/utils';
+import { RetweetEntity } from './entities/retweet.entity';
 
 @Module({
   controllers: [TweetController],
@@ -12,9 +13,13 @@ import { Utils } from 'helpers/utils/utils';
       provide: 'TWEET_REPOSITORY',
       useValue: TweetEntity
     },
+    {
+      provide: 'RETWEET_REPOSITORY',
+      useValue: RetweetEntity
+    },
     Utils
   ],
-  exports:['TWEET_REPOSITORY']
+  exports: ['TWEET_REPOSITORY', 'RETWEET_REPOSITORY', TweetService]
 })
-export class TweetModule {}
+export class TweetModule { }
 

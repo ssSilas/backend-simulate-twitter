@@ -1,12 +1,9 @@
 Funcionalidades: 
 X Registro de usuário usando nick único e senha
 X Login de usuário (Com a sessão de usuário da forma que achar melhor)
-* Feed
+X Feed
 X Tweet (Criação / exclusão)
-* Like / Desfazer "Like"
-* Retweet *Diferencial*
+X Like / Desfazer "Like"
+X Retweet *Diferencial*
 
-* Documentação no Swagger
-
-validar possibilidade de também criar um banco de dados automático
-Padronizar colunas dos bancos
+XDocumentação no Swagger

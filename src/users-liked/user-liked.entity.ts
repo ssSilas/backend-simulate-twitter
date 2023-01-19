@@ -1,5 +1,5 @@
 import { Column, ForeignKey, Model, Table } from "sequelize-typescript"
-import { TweetEntity } from "src/tweet/tweet.entity"
+import { TweetEntity } from "src/tweet/entities/tweet.entity"
 import { UserEntity } from "src/user/user.entity"
 
 @Table({ tableName: 'userliked', modelName: 'userliked', freezeTableName: true })
@@ -13,7 +13,7 @@ export class UserLikedEntity extends Model {
 
   @ForeignKey(() => TweetEntity)
   @Column({ allowNull: false })
-  tweet: number
+  tweetfk: number
 
   @ForeignKey(() => UserEntity)
   @Column({ allowNull: false })
@@ -22,4 +22,7 @@ export class UserLikedEntity extends Model {
   @ForeignKey(() => UserEntity)
   @Column({ allowNull: false })
   userliked: number
+
+  @Column({ allowNull: false })
+  type: number
 }

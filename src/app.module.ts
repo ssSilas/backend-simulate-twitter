@@ -6,9 +6,10 @@ import config from 'helpers/db/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { UserEntity } from './user/user.entity';
 import { TweetModule } from './tweet/tweet.module';
-import { TweetEntity } from './tweet/tweet.entity';
+import { TweetEntity } from './tweet/entities/tweet.entity';
 import { UsersLikedModule } from './users-liked/users-liked.module';
 import { UserLikedEntity } from './users-liked/user-liked.entity';
+import { RetweetEntity } from './tweet/entities/retweet.entity';
 
 @Module({
   imports: [
@@ -23,7 +24,7 @@ import { UserLikedEntity } from './users-liked/user-liked.entity';
       username: config().database.user,
       password: config().database.pass,
       database: config().database.dbName,
-      models: [UserEntity, TweetEntity, UserLikedEntity],
+      models: [UserEntity, TweetEntity, UserLikedEntity, RetweetEntity],
       define: { updatedAt: false },
       autoLoadModels: true,
       synchronize: true
@@ -34,6 +35,6 @@ import { UserLikedEntity } from './users-liked/user-liked.entity';
     UsersLikedModule
   ],
   controllers: [],
-  providers: [],
+  providers: []
 })
 export class AppModule { }
