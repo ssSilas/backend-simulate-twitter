@@ -36,7 +36,9 @@ Como:
 
 ## Banco de Dados
 
-### Na primeira vez que o código iniciado, irá sincronizar as tabelas e suas propriedades com o banco já criado e inserido na .env. Após isso, caso queira, comente as linhas de sincronização presente no arquivo app.module.29-30
+#### Na primeira vez que o código for iniciado, irá sincronizar as tabelas e suas propriedades com o banco já criado e inserido na .env
+
+#### Após isso, caso queira, comente as linhas de sincronização presentes no arquivo app.module.29-30
 
 ----
 
