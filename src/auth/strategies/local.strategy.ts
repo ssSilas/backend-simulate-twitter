@@ -13,7 +13,6 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
     })
   }
 
-  @ApiProperty()
   async validate(login: string, password: string) {
     try {
       const user = await this.authService.validateUser(login, password)

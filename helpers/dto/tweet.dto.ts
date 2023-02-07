@@ -1,7 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger"
-import { IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator"
+import { IsNotEmpty, IsNumber, IsString } from "class-validator"
 export class CreateTweetDto {
-  @ApiProperty()
   @IsNotEmpty({ message: "Informe o texto que deseja postar" })
   text: string
 }
@@ -10,12 +9,12 @@ export class DeleteTweetDto {
   id: string
 }
 export class InteractionsTweetDto {
-  @ApiProperty({description:"Id que receberá o *like* ou o *dislike*."})
+  @ApiProperty({ description: "Id que receberá o *like* ou o *dislike*." })
   @IsNotEmpty({ message: "Informe o id do tweet" })
   @IsNumber()
   tweetId: number
 
-  @ApiProperty({description:"O parâmetro type informa se a interação é *like* ou *dislike*, sendo assim, basta informar um dos dois."})
+  @ApiProperty({ description: "O parâmetro type informa se a interação é *like* ou *dislike*, sendo assim, basta informar um dos dois." })
   @IsNotEmpty({ message: "Informe o tipo da interação" })
   type: string
 }
