@@ -25,7 +25,7 @@ export class TweetController {
     type: CreateTweetDto,
     description: "Texto que o usuário irá Twittar"
   })
-  async createTweet(@Body('text') data: CreateTweetDto, @Request() req: ReqEx) {
+  async createTweet(@Body() data: CreateTweetDto, @Request() req: ReqEx) {
     try {
       const user = req.user
       return this.tweetService.createTweet(data.text, user["id"])
@@ -39,7 +39,7 @@ export class TweetController {
   async deleteTweet(@Query('id') id: number, @Request() req: ReqEx) {
     try {
       const user = req.user
-      return this.tweetService.deleteTweet(id, user["id"])
+      return await this.tweetService.deleteTweet(id, user["id"])
     } catch (error) {
       console.log(error)
       throw error

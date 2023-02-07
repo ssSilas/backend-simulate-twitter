@@ -24,7 +24,7 @@ export class UsersLikedController {
     }
   }
 
-  @Delete()
+  @Delete("delete")
   @ApiQuery({ description: "Esta ação remove a interação presente, caso exista." })
   async removeInteraction(@Query('id') id: number) {
     try {

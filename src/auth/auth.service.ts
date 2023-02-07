@@ -12,7 +12,7 @@ export class Tokengenerate {
     private readonly jwtService: JwtService
   ) { }
 
-  async tokenApidot8(user: UserDataForTokenDto, server: string) {
+  async generateToken(user: UserDataForTokenDto, server: string) {
     const secretKey: string = config().secretKey;
 
     const duration_token_web: string = config().durationToken;//horas : minutos
@@ -31,8 +31,8 @@ export class Tokengenerate {
       iat: Math.round(date / 1000),
       nbf: Math.round(date / 1000),
       data: {
-        id: user.id,
-        email: user.email
+        // id: user.id,
+        // email: user.email
       }
     }
     return this.jwtService.sign(objTokengenerate, { secret: secretKey, algorithm: 'HS256', })
@@ -70,7 +70,7 @@ export class AuthService {
 
   async login(user: UserDataForTokenDto, host: string) {
     try {
-      const response = await this.tokenGenerate.tokenApidot8(user, host)
+      const response = await this.tokenGenerate.generateToken(user, host)
       return { token: response }
     } catch (error) {
       throw error
